@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "mt7621.dtsi"
+
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
 #include <dt-bindings/leds/common.h>
@@ -29,12 +30,16 @@
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_STATUS;
 			gpios = <&aw9523 6 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-1 { /* p1_2 - wifi12 */
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_WLAN;
 			gpios = <&aw9523 10 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-2 { /* p1_4 - phone14 */
@@ -42,6 +47,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <1>;
 			gpios = <&aw9523 12 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-3 { /* p0_5 - rgb05-red */
@@ -49,6 +56,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <2>;
 			gpios = <&aw9523 5 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-4 { /* p1_0 - rgb10-blue */
@@ -56,6 +65,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <3>;
 			gpios = <&aw9523 8 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-5 { /* p1_3 - rgb13-green */
@@ -63,6 +74,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <4>;
 			gpios = <&aw9523 11 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-6  { /* p0_0 sig00 */
@@ -70,6 +83,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <5>;
 			gpios = <&aw9523 0 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-7 { /* p0_1 sig01 */
@@ -77,6 +92,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <6>;
 			gpios = <&aw9523 1 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-8 { /* p0_2 sig02 */
@@ -84,6 +101,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <7>;
 			gpios = <&aw9523 2 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-9 { /* p0_3 - sig03 */
@@ -91,6 +110,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <8>;
 			gpios = <&aw9523 3 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 
 		led-10 { /* p1_1 - sig11 */
@@ -98,6 +119,8 @@
 			function = LED_FUNCTION_INDICATOR;
 			function-enumerator = <9>;
 			gpios = <&aw9523 9 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+			linux,default-trigger = "none";
 		};
 	};
 
@@ -108,12 +131,12 @@
 		pinctrl-0 = <&button_pins>;
 
 		key-wps {
-			gpios = <&aw9523 16 GPIO_ACTIVE_LOW>;
+			gpios = <&aw9523 14 GPIO_ACTIVE_LOW>;
 			linux,code = <KEY_WPS_BUTTON>;
 		};
 
 		key-wlan {
-			gpios = <&aw9523 17 GPIO_ACTIVE_LOW>;
+			gpios = <&aw9523 15 GPIO_ACTIVE_LOW>;
 			linux,code = <KEY_WLAN>;
 		};
 	};
@@ -216,7 +239,7 @@
 		reset-gpios = <&gpio 6 GPIO_ACTIVE_HIGH>;
 
 		button_pins: button-pins {
-			pins = "gpio4", "gpio7", "gpio13", "gpio14", "gpio16", "gpio17";
+			pins = "gpio4", "gpio7", "gpio13", "gpio14", "gpio15";
 			function = "gpio";
 			input-enable;
 		};
