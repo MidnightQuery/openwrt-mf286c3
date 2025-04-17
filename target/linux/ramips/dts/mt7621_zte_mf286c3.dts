@@ -314,3 +314,10 @@
 		};
 	};
 };
+
+/& {
+	/delete-property/ led-boot;
+	/delete-property/ led-failsafe;
+	/delete-property/ led-running;
+	/delete-property/ led-upgrade;
+};
